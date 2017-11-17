@@ -1,11 +1,14 @@
 //const [ $hostVideo, $guestVideo ] = document.querySelectorAll('video');
-//const [ $hostTextarea, $guestTextarea ] = document.querySelectorAll('textarea');
 
+const [ $hostTextarea, $guestTextarea ] = document.querySelectorAll('textarea');
 const [ $startCamera, $closeConnection, $createAnswer ] = document.querySelectorAll('button');
 
-const [ $hostVideo ] = document.querySelectorAll('video');
-const [ $guestVideo ] = document.querySelectorAll('canvas');
-const [ $hostTextarea, $guestTextarea ] = document.querySelectorAll('textarea');
+//const [ $hostVideo ] = document.querySelectorAll('video');
+//const [ $guestVideo ] = document.querySelectorAll('canvas');
+
+const [ $guestVideo ] = document.querySelectorAll('video.guest');
+const [ $hostVideo ] = document.querySelectorAll('video.host');
+
 
 class Guest {
   constructor() {
@@ -30,8 +33,8 @@ class Guest {
 //  }
 
 startCamera() {
-    new window.SimpleDrawingBoard($guestVideo);
-    this.stream.host = $guestVideo.captureStream();
+//    new window.SimpleDrawingBoard($guestVideo);
+    this.stream.guest = $guestVideo.captureStream();
     $startCamera.disabled = true;
     $createAnswer.disabled = false;
   }
