@@ -3,6 +3,8 @@ const [ $guestVideo ] = document.querySelectorAll('video');
 const [ $hostTextarea, $guestTextarea ] = document.querySelectorAll('textarea');
 const [ $startCamera, $closeConnection, $createOffer, $setAnswer ] = document.querySelectorAll('button');
 
+
+
 class Host {
   constructor() {
     this.stream = {
@@ -15,11 +17,9 @@ class Host {
   startCamera() {
     new window.SimpleDrawingBoard($hostVideo);
     this.stream.host = $hostVideo.captureStream();
-
     $startCamera.disabled = true;
     $createOffer.disabled = false;
   }
-
   createOffer() {
     const peer = this.peer = new RTCPeerConnection({
       iceServers: [ { urls: 'stun:stun.skyway.io:3478' } ],
