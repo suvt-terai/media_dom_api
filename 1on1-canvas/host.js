@@ -24,8 +24,14 @@ class Host {
     const peer = this.peer = new RTCPeerConnection({
       iceServers: [ { urls: 'stun:stun.skyway.io:3478' } ],
     });
+//const peer = new Peer({key: '70be25d9-c5d6-4c97-a3b8-6ca8dea1287b', debug: true});
+//peer.on('open', function(id){
+//
+//    // peerに接続時にランダムなidが生成される
+//	 console.log('My peer ID is: ' + id);
+//  });
 
-    peer.addEventListener('negotiationneeded', () => {
+		peer.addEventListener('negotiationneeded', () => {
       peer
         .createOffer()
         .then(sdp => peer.setLocalDescription(sdp));
