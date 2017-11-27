@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>Capture chat Host</title>
+	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> -->
+	<script type="text/javascript" src="https://cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
+<style>
+		canvas,
+		video,
+		textarea { width: 300px; height: 200px; margin: 5px; }
+		video { background-color: #000; }
+		canvas { background-color: #777; border: solid}
+		textarea { padding: 0; }
+		#title-canvas{ float: left; width: 300px; text-align: center}
+		#title-video{width: 640px; text-align: center;}
+
+/*		body > div { width: 640px; margin: auto; text-align: center; }*/
+	</style>
+</head>
+
+<body>
+
+	<h1>Simple Capture Chat</h1>
+
+	<div id="video-container">
+		<div id ="title-canvas">
+		my-video
+		</div>
+		<div id ="title-video">
+		capture-video<br>
+		</div>
+		<video id="my-video" autoplay src="terai.mp4" controls loop></video>
+		<video id="peer-video" autoplay controls></video>
+	</div>
+
+	<div>
+		<p>Your ID: <span id="my-id">...</span></p>
+		<p>Callee ID: <span id="peer-id">...</span></p>
+	</div>
+
+	<div>
+		<input type="text" placeholder="Call user id..." id="callee-id">
+		<button class="pure-button pure-button-success" id="make-call">Call</button>
+		<button class="" id="end-call">End call</button>
+	</div>
+
+ <script type="text/javascript" src="jquery.js"></script>
+ <!--<script type="text/javascript" src="sdb.js"></script>-->
+ <script type="text/javascript" src="video1.js"></script>
+	
+
+</body>
+</html>
