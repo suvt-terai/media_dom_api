@@ -6,13 +6,11 @@
 	<script type="text/javascript" src="https://cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
 	<style>
 		canvas,
-		video,
-		textarea { width: 300px; height: 200px; margin: 5px; }
+		video { width: 720px; height: 500px; margin: 5px; }
 		video { background-color: #000; }
-		canvas { background-color: #777; border: solid}
 		textarea { padding: 0; }
-		#title-canvas{ float: left; width: 300px; text-align: center}
-		#title-video{width: 640px; text-align: center;}
+		#title-canvas{ width: 720px; text-align: center}
+		#my-video{display: none;}
 
 /*		body > div { width: 640px; margin: auto; text-align: center; }*/
 	</style>
@@ -25,13 +23,10 @@
 
 	<div id="video-container">
 		<div id ="title-canvas">
-		 my-video
+		 capture-video
 		</div>
-		<div id ="title-video">
-		capture-video<br>
-		</div>
-		<video id="my-video" autoplay controls src="sample.mp4" loop></video>
 		<video id="peer-video" autoplay controls></video>
+		<video id="my-video" src="sample.mp4"></video>
 	</div>
 
 	<div>
